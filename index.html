@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+
+<!-- === Header Starts === -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>MultiViewDreamer</title>
+
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link href="./assets/font.css" rel="stylesheet" type="text/css">
+  <link href="./assets/style.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+  <link href='https://fonts.googleapis.com/css?family=Shantell Sans' rel='stylesheet'>
+</head>
+<!-- === Header Ends === -->
+
+<style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(620px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  padding-left: 10px;
+}
+.grid img {
+  border: 1px solid #000;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0);
+  max-width: 100%;
+  position: center;
+  margin-left: 10px;
+  margin-top: -265px;
+}
+.grid_t {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(940px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  padding-left: 10px;
+  place-items: center;
+}
+.grid_t img {
+  border: 1px solid #000;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0);
+  max-width: 100%;
+  position: center;
+  margin-left: 10px;
+  margin-top: -265px;
+}
+.box {
+        height: 100px;
+        text-align: center;
+        font-size: 20pt;
+        line-height:100px;
+        margin: 0px;
+}
+.box_t {
+        height: 50px;
+        text-align: center;
+        font-size: 25px;
+        line-height:50px;
+        margin: 0px;
+}
+.box_tt {
+        height: 36px;
+        text-align: center;
+        font-size: 18px;
+        line-height:36px;
+        margin: 0px;
+        font-family: Shantell Sans,serif;
+}
+.rp {
+        height: 20px;
+        text-align: center;
+        line-height:20px;
+        font-size: 20px;
+        font-weight: bold;
+}
+</style>
+
+<body>
+
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+    <div class="title">
+      <b>Wired Perspectives: Multi-View Wire Art Succumbs to Generative AI</b>
+    </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+    <a href="http://tingxiangshuixie.com/" target="_blank">Zhiyu Qu</a><sup>1</sup>,&nbsp;
+    <a href="https://www.semanticscholar.org/author/Lan-Yang/2108652564" target="_blank">Lan Yang</a><sup>2</sup>,&nbsp;
+    <a href="https://www.cs.cmu.edu/~zhhg/" target="_blank">Honggang Zhang</a><sup>2</sup>,&nbsp;
+    <a href="https://www.surrey.ac.uk/people/tao-xiang" target="_blank">Tao Xiang</a><sup>1</sup>,&nbsp;
+    <a href="https://kyp-sketchx.github.io/" target="_blank">Kaiyue Pang</a><sup>1</sup>,&nbsp;
+    <a href="http://sketchx.ai/" target="_blank">Yi-Zhe Song</a><sup>1</sup>
+  </div>
+  <div class="institution">
+    <sup>1</sup>SketchX, CVSSP, University of Surrey
+    <br>
+    <sup>2</sup>School of Artificial Intelligence, Beijing University of Posts and Telecommunications
+    <!-- <br> -->
+    <!-- <sup>3</sup>iFlyTek-Surrey Joint Research Centre on Artificial Intelligence -->
+  </div>
+  <br>
+  <div class="link">
+    <a href="https://arxiv.org/abs/2304.11744" target="_blank">[Paper]</a>&nbsp; &nbsp;
+    <a href="https://github.com/WinKawaks/DreamWire" target="_blank">[Code]</a>&nbsp; &nbsp;
+    <!-- <a href="" target="_blank">[Presentation (TBD)]</a>&nbsp; &nbsp; -->
+  </div>
+</div>
+
+<div class="section">
+  <div class="title">Gallery</div>
+  <p class="rp">Please rotate or zoom in and out of all the artwork on this page to experience the fun of changing perspectives.</p>
+  <hr />
+  <p class="box_tt">Issac Newton&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Albert Einstein&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Alan Turing</p>
+  <hr /> 
+  <iframe src="./assets/star.html" width="100%" height="800px;" frameBorder="0"></iframe>
+  <hr />
+  <p class="box_tt">London Tower Bridge&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sydney Opera House&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Athens Parthenon</p>
+  <hr /> 
+  <iframe src="./assets/arch.html" width="100%" height="800px;" frameBorder="0"></iframe>
+</div>
+
+</body>
+</html>
