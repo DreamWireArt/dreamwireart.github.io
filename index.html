@@ -180,7 +180,7 @@
   </div>
 </div>
 
-<div class="section">
+<div class="section" id="gallery">
   <div class="title">Gallery</div>
   <p class="rp">Please rotate or zoom in and out of all the artwork on this page to experience the fun of changing perspectives.</p>
   <p class="rpn">Your patience is appreciated as the model is loading. Thank you for your understanding.</p>
@@ -197,7 +197,7 @@
   <iframe src="./assets/Architecture.html" width="100%" height="800px;" frameBorder="0"></iframe>
   <hr />
   </div>
-  <div class="group">
+  <!-- <div class="group">
   <p class="box_tt">Leonardo da Vinci&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Michelangelo&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Raphael</p>
   <hr /> 
   <iframe src="./assets/Renaissance.html" width="100%" height="800px;" frameBorder="0"></iframe>
@@ -225,11 +225,6 @@
   <p class="box_tt">Tree&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Flower&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sun</p>
   <hr /> 
   <iframe src="./assets/Tree.html" width="100%" height="800px;" frameBorder="0"></iframe>
-  <!-- <hr />
-  <p class="box_tt">Cat&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dog&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Bird</p>
-  <hr /> 
-  <iframe src="./assets/Animal.html" width="100%" height="800px;" frameBorder="0"></iframe>
-   -->
   <hr />
   </div>
   <div class="group">
@@ -285,46 +280,67 @@
   <hr /> 
   <iframe src="./assets/Sherlock.html" width="100%" height="800px;" frameBorder="0"></iframe>
   </div>
-
-<!--   <br>
-  <div style="text-align: center;">
-    <button id="loadMoreButton">Load More</button>
-  </div> -->
+ -->
+ <div id="load">
+    <br>
+    <div style="text-align: center;">
+      <button id="loadMoreButton">Load More</button>
+    </div>
+  </div>
 </div>
 
 </body>
 </html>
 
 <script>
-  let currentGroup = 2;
+  let currentGroup = 0;
+  const groupContent = [
+  '<div class="group"><p class="box_tt">Leonardo da Vinci&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Michelangelo&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Raphael</p><hr /> <iframe src="./assets/Renaissance.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Stormtrooper&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Darth Vader&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Yoda</p><hr /> <iframe src="./assets/Starwar.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Spider Man&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Iron Man&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Caption America</p><hr /> <iframe src="./assets/Hero.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Unicorn&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dragon&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Phoenix</p><hr /> <iframe src="./assets/Fantastic_Beast.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Tree&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Flower&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sun</p><hr /> <iframe src="./assets/Tree.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Thor&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Loki&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Hulk</p><hr /> <iframe src="./assets/Marvel.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Spider Man\'s Web&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Batman\'s Batarang&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Caption America\'s Shield</p><hr /> <iframe src="./assets/Hero_Item.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Pikachu&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Charmander&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Bulbasaur</p><hr /> <iframe src="./assets/Pokemon.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Mario&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Luigi&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Princess Peach</p><hr /> <iframe src="./assets/Mario.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Aragorn&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Legolas&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Gimli</p><hr /> <iframe src="./assets/Lord.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_tt">Daenerys Targaryen&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Jon Snow&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tyrion Lannister</p><hr /> <iframe src="./assets/Thrones.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_mix"><img src="./assets/edges/G.png" width="60px;" height="60px;" border="1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="./assets/edges/E.png" width="60px;" height="60px;" border="1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="./assets/edges/B.png" width="60px;" height="60px;" border="1"></p><hr /> <iframe src="./assets/GEB.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_mix"><img src="./assets/edges/alien.png" width="60px;" height="60px;" border="1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="./assets/edges/robot.png" width="60px;" height="60px;" border="1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src="./assets/edges/astronaut.png" width="60px;" height="60px;" border="1"></p><hr /><iframe src="./assets/Character.html" width="100%" height="800px;" frameBorder="0"></iframe><hr /></div>',
+  '<div class="group"><p class="box_mix"><img src="./assets/edges/sherlock.png" width="60px;" height="60px;" border="1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Doctor Watson&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;London Big Ben</p><hr /> <iframe src="./assets/Sherlock.html" width="100%" height="800px;" frameBorder="0"></iframe></div>'
+  ];
 
-  const iframes = document.querySelectorAll('iframe');
-  const groups = document.getElementsByClassName('group');
-  let sources = [];
+  const loadMoreButton = document.getElementById('loadMoreButton');
+  const loadSec = document.getElementById('load');
+  loadMoreButton.addEventListener('click', loadMoreContent);
 
-  for (let i = 2; i < groups.length; i++) {
-    groups[i].style.display = 'none';
-    sources.push(iframes[i+1].getAttribute('data-src'));
-    iframes[i+1].src = '';
+  function loadMoreContent() {
+    const sectionDiv = document.querySelector('#gallery');
+
+    if (currentGroup < groupContent.length) {
+      appendChild(sectionDiv, currentGroup);
+      currentGroup++;
+      appendChild(sectionDiv, currentGroup);
+      currentGroup++;
+      if (currentGroup >= groupContent.length) {
+        loadMoreButton.disabled = true;
+        loadSec.style.display = 'none';
+      }
+    } else {
+      loadMoreButton.disabled = true;
+      loadSec.style.display = 'none';
+    }
   }
 
-  // 创建加载更多按钮的点击事件
-  document.getElementById('loadMoreButton').addEventListener('click', function() {
-    const start = currentGroup;
-    const end = Math.min(currentGroup + 2, groups.length); // 最后一组不足两个iframe时的处理
+  function appendChild(sectionDiv, currentGroup) {
+    const newGroupString = groupContent[currentGroup];
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = newGroupString;
 
-    // 加载下一组的iframe
-    for (let j = start; j < end; j++) {
-      iframes[j+1].src = sources[j]; // 将data-src中的链接赋值给src加载内容
-      groups[j].style.display = 'block';
-    }
+    const newGroupDiv = tempDiv.firstChild;
 
-    currentGroup=currentGroup + 2; // 更新组数
-
-    // 如果已加载所有组，隐藏加载更多按钮
-    if (end === iframes.length) {
-      document.getElementById('loadMoreButton').style.display = 'none';
-    }
-  });
+    sectionDiv.insertBefore(newGroupDiv, loadSec);
+  }
 
 </script>
