@@ -315,7 +315,8 @@
   const loadSec = document.getElementById('load');
   loadMoreButton.addEventListener('click', loadMoreContent);
 
-  function loadMoreContent() {
+  function loadMoreContent(event) {
+    event.preventDefault();
     const sectionDiv = document.querySelector('#gallery');
 
     if (currentGroup < groupContent.length) {
